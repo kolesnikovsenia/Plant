@@ -1,0 +1,319 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Nunito:wght@600;700&display=swap');
+// Fonts
+
+// Mixin or Variable
+$basic_color: #066F14
+$text_color_black: #1A1A1A
+$text_color_grey: #4A4A4A
+$text_color_footer: #5A5A5A
+$text_color_white: #ffffff
+$font_family_Sans: DM Sans
+$font_family_Nunito: Nunito
+
+@mixin position_center
+	display: flex
+	justify-content: center
+	align-items: center
+@mixin font_logo
+	font-weight: 700
+	font-size: 24px
+	line-height: 33px
+	cursor: pointer
+	transition: 0.4s ease-in
+@mixin font_link
+	font-weight: 400
+	font-size: 16px
+	line-height: 21px
+	transition: 0.4s ease-in
+@mixin font_login_btn
+	font-weight: 400
+	font-size: 16px
+	line-height: 21px
+	transition: 0.4s ease-in
+	cursor: pointer
+@mixin small_btn
+	font-weight: 400
+	font-size: 14px
+	line-height: 18px
+	background: $basic_color
+	border-radius: 4px
+	border: none
+	cursor: pointer
+	transition: 0.4s ease-in
+	padding: 12px 16px
+	color: $text_color_white
+@mixin font_h1
+	font-weight: 700
+	font-size: 72px
+	line-height: 92px
+@mixin font_text_section
+	font-weight: 400
+	font-size: 16px
+	line-height: 160%
+	color: $text_color_grey
+@mixin btn_section
+	cursor: pointer
+	font-weight: 500
+	font-size: 18px
+	line-height: 23px
+	padding: 16px 32px
+	border: none
+	border-radius: 4px
+	background: $basic_color
+	color: $text_color_white
+	transition: 0.4s ease-in-out
+@mixin num
+	font-weight: 700
+	font-size: 36px
+	line-height: 49px
+	color: $text_color_black
+@mixin text
+	font-family: $font_family_Sans
+	font-weight: 400
+	font-size: 18px
+	line-height: 23px
+	color: $text_color_black
+@mixin collection_title
+	font-weight: 700
+	font-size: 36px
+	line-height: 49px
+	color: $text_color_black
+@mixin collection_img_box
+	border-radius: 4px;
+	padding: 22px
+	border: none
+	cursor: pointer
+	transition: 0.6s all
+@mixin row
+	display: flex
+	align-items: center
+	justify-content: space-between
+	flex-direction: row
+@mixin accent_text
+	font-weight: 500
+	font-size: 18px
+	line-height: 23px
+	color: $basic_color
+@mixin title_section
+	font-family: $font_family_Nunito
+	font-weight: 700
+	font-size: 40px
+	line-height: 50px
+	color: $text_color_black
+// Mixin or Variable
+
+// General
+*
+	padding: 0
+	margin: 0
+	font-family: DM-sans, Nunito
+	box-sizing: border-box
+	list-style-type: none
+	text-decoration: none
+
+.container
+	max-width: 1152px
+	margin: 0 auto
+
+// General
+.menu_item
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding-top: 47px
+	&_logo
+		@include font_logo
+		color: $text_color_black
+		&:hover
+				color: $basic_color
+	&_link
+		display: flex
+		align-items: center
+		gap: 48px
+		.link
+			@include font_link
+			color: $text_color_black
+			&:hover
+				background: #DFFFE3
+				border-radius: 6px
+	&_login
+		display: flex
+		gap: 48px
+		&_btnLogin
+			background: none
+			border: none
+			@include font_login_btn
+			color: $text_color_black
+			&:hover
+				color: $basic_color
+		&_btnSingUp
+			@include small_btn
+			&:hover
+				background: #DFFFE3
+				color: $text_color_black
+.welcome_section
+	padding-top: 102px
+	&_row
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: stretch
+	&_info
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: space-evenly
+	&_title
+		@include font_h1
+		color: $text_color_black
+	&_text
+		@include font_text_section
+		color: $text_color_grey
+	&_btn
+		@include btn_section
+		&:hover
+				background: #DFFFEE
+				color: $basic_color
+	&_table
+		display: flex
+		gap: 112px
+		&_column
+			display: flex
+			justify-content: space-between
+			flex-direction: column
+			align-items: center
+			gap: 10px
+		.num
+			@include num
+		.text
+			@include text
+	.leaf
+		position: absolute
+		right: 0
+		top: 50%
+		left: 80%
+	&_img
+		position: relative
+	.float // green_box
+		position: absolute
+		@include position_center
+		&_line
+			@include position_center
+		&_rectangle
+			height: 4px
+			width: 95px
+			background: #519A5A
+		&_frame
+			@include position_center
+			width: 16px
+			height: 16px
+			border-radius: 100%
+			background: rgba(255, 255, 255, 0.54)
+			.dot
+				height: 6px
+				width: 6px
+				border-radius: 100%
+				background: #F4C300
+		&_text
+			font-weight: 400
+			font-size: 16px
+			line-height: 21px
+			color: $text_color_white
+			padding: 16px 32px
+			background: rgba(6, 111, 20, 0.7)
+			border-radius: 4px
+		&_first
+			top: 85px
+			right: -40px
+		&_second
+			flex-direction: row-reverse
+			top: 197px
+			left: -6px
+			.float_line
+				flex-direction: row-reverse
+		&_third
+			top: 557px
+			right: -40px
+
+// Section Collection
+
+.section_collection
+	padding-top: 154px
+	&_row
+		@include row
+		&_text
+			display: flex
+			flex-direction: column
+			gap: 37px
+		&_title
+			@include collection_title
+		&_img
+			display: flex
+			align-items: center
+			flex-direction: row
+			gap: 24px
+			&_box
+				@include collection_img_box
+				background: #F6EDE8
+				&:hover
+					background: #DFFFE3
+			& :nth-child(2)
+				background: #F0F1F6
+				&:hover
+					background: #DFFFE3
+		&_btn
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			gap: 9px
+			background: none
+			border: none
+			cursor: pointer
+			font-weight: 400
+			font-size: 18px
+			line-height: 23px
+			color: #4A4A4A
+			transition: 0.4s ease-in
+			&:hover
+				font-size: 25px
+				color: $basic_color
+				gap: 150px
+
+//About Us Section
+
+.about_section
+	padding-top: 128px
+	&_row
+		display: flex
+		align-items: flex-start
+		gap: 80px
+	&_img
+		box-shadow: -70px -40px $basic_color
+		&_selector
+		margin-left: 70px
+	&_column
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		gap: 25px
+		&_header
+			@include accent_text
+		&_title
+			@include title_section
+		&_text
+			@include font_text_section
+		&_subtext
+			font-weight: 500
+			font-size: 18px
+			line-height: 160%
+			color: $text_color_grey
+		&_btn
+			@include btn_section
+			&:hover
+				background: #DFFFEE
+				color: $basic_color
+
+
+// 
