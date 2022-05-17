@@ -101,6 +101,29 @@ $font_family_Nunito: Nunito
 	font-size: 40px
 	line-height: 50px
 	color: $text_color_black
+@mixin categories
+	border: none
+	background: none
+	cursor: pointer
+	font-weight: 500
+	font-size: 16px
+	line-height: 21px
+	color: $text_color_grey
+	transition: 0.2s ease-in-out
+@mixin product_section_img_box
+	cursor: pointer
+	background: #EAF2E5
+	border: none
+	border-radius: 5px
+	padding: 10px 60px 20px 50px
+	display: flex
+	align-items: center
+	justify-content: center
+	gap: 10px
+	flex-direction: column
+	align-items: flex-start
+	transition: 0.4s all
+	width: 25%
 // Mixin or Variable
 
 // General
@@ -275,11 +298,11 @@ $font_family_Nunito: Nunito
 			font-size: 18px
 			line-height: 23px
 			color: #4A4A4A
-			transition: 0.4s ease-in
+			transition: 0.4s ease-in-out
 			&:hover
-				font-size: 25px
+				font-size: 20px
 				color: $basic_color
-				gap: 150px
+				gap: 100px
 
 //About Us Section
 
@@ -292,12 +315,13 @@ $font_family_Nunito: Nunito
 	&_img
 		box-shadow: -70px -40px $basic_color
 		&_selector
-		margin-left: 70px
+            margin-left: 70px
+            margin-top: 40px
 	&_column
 		display: flex
 		flex-direction: column
 		align-items: flex-start
-		gap: 25px
+		gap: 24px
 		&_header
 			@include accent_text
 		&_title
@@ -316,4 +340,148 @@ $font_family_Nunito: Nunito
 				color: $basic_color
 
 
-// 
+// Product Section
+.product_section
+	padding-top: 128px
+	&_text
+		display: flex
+		flex-direction: column
+		align-items: center
+		&_title
+			@include title_section
+		&_categories
+			padding-top: 24px
+			display: flex
+			gap: 24px
+			.categories
+				@include categories
+				&:hover
+					font-size: 18px
+					color: $basic_color
+	&_img
+		padding-top: 48px
+		display: flex
+		justify-content: space-between
+		gap: 14px 
+		&_box
+			@include product_section_img_box
+			&:hover
+				background: #F0EBE6
+			&_text
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				gap: 12px
+				.title
+					font-weight: 600
+					font-size: 24px
+					line-height: 28px
+					color: $text_color_black
+				.price
+					font-weight: 600
+					font-size: 16px
+					line-height: 19px
+					color: $text_color_black
+	&_btn
+		@include btn_section
+		margin-top: 56px
+		&:hover
+				background: #DFFFEE
+				color: $basic_color
+		&_box
+			@include position_center
+
+// About Customers Section
+
+.about_customers
+	padding-top: 128px
+	&_section
+		position: relative
+		&_img
+			position: absolute
+			top: 0
+			right: 0
+			z-index: -1
+	&_text
+		width: 48%
+		display: flex
+		justify-content: flex-start
+		flex-direction: column
+		gap: 50px
+		&_block
+			display: flex
+			justify-content: flex-start
+			flex-direction: column
+			gap: 25px
+			&_title
+				@include title_section
+			&_text
+				@include font_text_section
+	&_block
+		&_profile
+			background-color: $basic_color
+			border-radius: 5px
+			padding: 20px 32px
+			width: 110%
+			z-index: 1
+			position: relative
+			&_comment
+					font-weight: 400
+					font-size: 16px
+					line-height: 160%
+					color: #ECECEC
+			&_btn
+				position: absolute
+				right: 0
+				bottom: 0
+				display: flex
+				align-items: center
+				.btn
+					@include position_center
+					border: none
+					cursor: pointer
+					background: #143B19
+					width: 24px
+					height: 24px
+					transition: 0.4s all
+					&:first-child
+						transform: rotate(180deg)
+					&:hover
+						background: $text_color_white
+			&_sumbol
+				position: absolute
+				top: 20px
+				right: 24px
+		&_account
+			display: flex
+			gap: 10px
+			align-items: center
+			&_info
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				gap: 6px
+				.name
+					background: none
+					border: none
+					cursor: pointer
+					font-weight: 600
+					font-size: 18px
+					line-height: 25px
+					color: $text_color_white
+					transition: 0.4s all
+					&:hover
+						color: $text_color_grey
+				.working_position
+					background: none
+					border: none
+					cursor: pointer
+					font-weight: 400
+					font-size: 14px
+					line-height: 18px
+					color: #D9D9D9
+					transition: 0.4s all
+					&:hover
+						color: $text_color_grey
+			&_img
+				border-radius: 100%
