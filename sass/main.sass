@@ -19,7 +19,6 @@ $font_family_Nunito: Nunito
 	font-weight: 700
 	font-size: 24px
 	line-height: 33px
-	cursor: pointer
 	transition: 0.4s ease-in
 @mixin font_link
 	font-weight: 400
@@ -124,6 +123,16 @@ $font_family_Nunito: Nunito
 	align-items: flex-start
 	transition: 0.4s all
 	width: 25%
+@mixin text_section
+	font-weight: 400
+	font-size: 16px
+	line-height: 160%
+	color: #ECECEC
+@mixin instagram_title
+	font-weight: 700
+	font-size: 48px
+	line-height: 57px
+	color: $text_color_black
 // Mixin or Variable
 
 // General
@@ -149,7 +158,7 @@ $font_family_Nunito: Nunito
 		@include font_logo
 		color: $text_color_black
 		&:hover
-				color: $basic_color
+			color: $basic_color
 	&_link
 		display: flex
 		align-items: center
@@ -426,10 +435,10 @@ $font_family_Nunito: Nunito
 			z-index: 1
 			position: relative
 			&_comment
-					font-weight: 400
-					font-size: 16px
-					line-height: 160%
-					color: #ECECEC
+				font-weight: 400
+				font-size: 16px
+				line-height: 160%
+				color: #ECECEC
 			&_btn
 				position: absolute
 				right: 0
@@ -485,3 +494,125 @@ $font_family_Nunito: Nunito
 						color: $text_color_grey
 			&_img
 				border-radius: 100%
+
+// News Section
+
+.news_section
+	padding-top: 207px
+	@include position_center
+	&_row
+		position: relative
+		padding: 60px 262px 60px 60px
+		background-color: #DFFFE3
+		border-radius: 6px
+		.img
+			position: absolute
+			right: 14px
+			top: -26px
+	&_column
+		display: flex
+		flex-direction: column
+		align-items: stretch
+		justify-content: flex-start
+		width: 70%
+		gap: 25px
+		.title
+			@include title_section
+		.text
+			@include font_text_section
+		.input_block
+			position: relative
+			.input
+				font-weight: 400
+				font-size: 14px
+				line-height: 18px
+				color: $text_color_footer
+				padding: 20px 0px 20px 20px
+				width: 100%
+				border: none
+				border-radius: 5px
+				background: $text_color_white
+			.btn
+				position: absolute
+				@include small_btn
+				right: 8px
+				top: 8px
+				bottom: 8px
+				&:hover
+					background: #DFFFE3
+					color: $text_color_black
+
+// Instagram ad Section
+
+.instagram_section
+	padding-top: 79px
+	.text
+		display: flex
+		align-items: center
+		flex-direction: column
+		gap: 12px
+	&_title
+		@include instagram_title
+	&_text
+		@include font_text_section
+		text-align: center
+	&_img
+		padding-top: 40px
+		.img_instagram
+			display: inline-block
+
+// Footer Section
+
+footer
+	padding-top: 128px
+	padding-bottom: 96px
+	.footer_row
+		display: flex
+		justify-content: space-between
+		align-items: flex-start
+		.footer_column_start
+			display: flex
+			flex-direction: column
+			gap: 24px
+			width: 30%
+			.title
+				@include font_logo
+				&:hover
+					color: $basic_color
+			.text
+				@include font_text_section
+			.social_icons
+				display: flex
+				justify-content: flex-start
+				gap: 16px
+				.icon_box
+					position: relative
+					background: #EDFFDD
+					border-radius: 5px
+					width: 48px
+					height: 48px
+					@include position_center
+					transition: 0.4s all
+					&:hover
+						background: #F0EBE6
+		.footer_column_end
+			display: flex
+			flex-direction: row
+			gap: 100px
+			.column_nav
+				display: flex
+				flex-direction: column
+				gap: 24px
+				.title
+					@include font_logo
+					&:hover
+						color: $basic_color
+				.list
+					display: flex
+					flex-direction: column
+					gap: 16px
+					a
+						@include font_text_section
+						transition: 0.5s ease-in
+						&:hover
+							color: $basic_color
