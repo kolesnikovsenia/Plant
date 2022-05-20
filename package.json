@@ -1,0 +1,33 @@
+{
+  "name": "plant",
+  "version": "1.0.0",
+  "description": "plant-leanding page",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolesnikovsenia/plant.git"
+  },
+  "author": "kolesnikovsenia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kolesnikovsenia/plant/issues"
+  },
+  "homepage": "https://github.com/kolesnikovsenia/plant#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.10",
+    "del": "^6.1.0",
+    "gulg": "^1.3.0",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-sass": "^5.1.0",
+    "i": "^0.3.7",
+    "node-sass": "^7.0.1",
+    "rename": "^1.0.4",
+    "sass": "^1.52.0"
+  }
+}
