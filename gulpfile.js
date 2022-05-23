@@ -11,13 +11,13 @@ const path={
 	src:{
 		html: [sorce_folder + "/*.html", "!"+sorce_folder + "/_*.html"],
 		css: sorce_folder + "/sass/*.sass", 
-		img: sorce_folder + "/img/*.svg",
+		img: sorce_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		icons: sorce_folder + "/icons/*.svg",
 	},
 	watch:{
 		html: sorce_folder + "/**/*.html",
 		css: sorce_folder + "/sass/**/*.sass",
-		img: sorce_folder + "/img/*.svg",
+		img: sorce_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		icons: sorce_folder + "/icons/*.svg",
 	},
 	clean: "./" + project_folder + "/"
@@ -46,14 +46,6 @@ function browserSync(params) {
 	})
 }
 
-function html() {
-	return src(path.src.html)
-		.pipe(webp())
-		.pipe(fileinclude())
-		.pipe(dest(path.build.html))
-		.pipe(browsersync.stream())
-}
-
 function css() {
 	return src(path.src.css)
 		.pipe(
@@ -80,6 +72,16 @@ function css() {
 		.pipe(dest(path.build.css))
 		.pipe(browsersync.stream())
 }
+
+function html() {
+	return src(path.src.html)
+		.pipe(webp())
+		.pipe(fileinclude())
+		.pipe(dest(path.build.html))
+		.pipe(browsersync.stream())
+}
+
+
 
 // function js() {
 // 	return src(path.src.js)
