@@ -1,6 +1,188 @@
-// @import "mixin"
-// @import "main"
+@import "mixin"
 
-@media (max-width: 992px)
-.container
-	max-width: 868px
+@media (max-width: 1024px)
+	.container
+		max-width: 980px
+		&_login
+			gap: 20px
+	.leaf
+		display: none
+	.welcome_section
+		&_row
+			flex-direction: column-reverse
+			align-items: center
+		&_info
+			@include position_center
+			gap: 25px
+		&_text
+			text-align: center
+		&_table
+			justify-content: space-around
+		&_img
+			img
+				height: 30%
+	.section_collection
+		padding-top: 100px
+		&_row
+			justify-content: center
+			flex-direction: column-reverse
+			gap: 24px
+			&_btn
+				justify-content: center
+				font-size: 24px
+				&:hover
+					font-size: 26px
+	.about_section_row
+		align-items: center
+		gap: 25px
+		flex-direction: column
+	.about_section_column
+		align-items: center
+		&_text
+			text-align: center
+	.product_section_img
+		gap: 0px
+		justify-content: space-around
+		&_box
+			&:last-child
+				display: none
+			&_text
+				.title
+					font-size: 18px
+	.about_customers
+		padding-top: 100px
+		&_section
+			display: flex
+			position: unset
+			flex-direction: column-reverse
+			align-items: center
+			&_img
+				position: unset
+				width: 70%
+				border-radius: 15px 
+		&_text
+			width: 100%
+			justify-content: center
+			align-items: center
+			&_block
+				&_title
+					text-align: center
+				&_text
+					text-align: center
+		&_block
+			width: 70%
+			&_profile
+				display: flex
+				flex-direction: column
+				align-items: flex-start
+				gap: 14px
+				width: 100%
+				position: unset
+				z-index: unset
+				&_btn
+					position: unset
+					gap: 6px
+					.btn
+						width: 40px
+						height: 40px
+				&_sumbol
+					display: none
+	.news_section
+		padding-top: 80px
+	.news_section_row
+		display: flex
+		padding-right: 40px 
+	.instagram_section_img
+		display: flex
+		flex-direction: row
+		align-items: stretch
+		justify-content: space-between
+		.img_instagram
+			a
+				display: block
+		img
+			&:nth-last-child(4)
+				display: none
+	footer
+		padding-top: 80px
+		.footer_row
+			justify-content: space-around
+@mixin font_h1
+	font-size: 55px
+	line-height: 92px
+@media (max-width: 768px)
+	.container
+		max-width: 600px
+	.menu_item_link
+		display: none
+	.welcome_section
+		padding-top: 60px
+	.section_collection_row_title
+		text-align: center
+	.section_collection_row_img
+		justify-content: center
+		gap: 10px
+		width: 100%
+		&_box
+			width: 30%
+			padding: 10px
+	.about_section_column_title
+		text-align: center
+	.about_section_column_subtext
+		text-align: center
+	.product_section_img
+		flex-direction: column
+		gap: 20px
+		align-items: center
+	.product_section_img_box
+		width: 40%
+	.about_customers_section
+		gap: 30px
+	.news_section_row
+		padding-right: 0px
+		z-index: -1
+	.news_section_column
+		z-index: 1
+	.instagram_section_img
+		flex-direction: column
+		align-items: center
+		gap: 10px
+		img
+			width: 50%
+		.img_instagram
+			width: 50%
+			a
+				width: 100%
+			img
+				width: 100%
+	footer
+		.footer_row
+			justify-content: space-between
+			.footer_column_start
+				gap: 15px
+				width: 40%
+			.footer_column_end
+				gap: 30px
+				.column_nav
+					gap: 15px
+					.list
+						gap: 8px
+@mixin font_h1
+	text-align: center
+	font-size: 35px
+	line-height: 92px
+@mixin font_logo
+	font-weight: 700
+	font-size: 16px
+	line-height: 33px
+		transition: 0.4s ease-in
+@mixin font_text_section
+	font-size: 12px
+	font-weight: 400
+	line-height: 160%
+	color: $text_color_grey
+@media (max-width: 425px)
+	.container
+		max-width: 300px
+	.menu_item_login
+		display: none
