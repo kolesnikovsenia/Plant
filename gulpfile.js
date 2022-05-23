@@ -11,14 +11,14 @@ const path={
 	src:{
 		html: [sorce_folder + "/*.html", "!"+sorce_folder + "/_*.html"],
 		css: sorce_folder + "/sass/*.sass", 
-		img: sorce_folder + "/img/",
-		icons: sorce_folder + "/icons/",
+		img: sorce_folder + "/img/*.svg",
+		icons: sorce_folder + "/icons/*.svg",
 	},
 	watch:{
 		html: sorce_folder + "/**/*.html",
 		css: sorce_folder + "/sass/**/*.sass",
-		img: sorce_folder + "/img/",
-		icons: sorce_folder + "/icons/",
+		img: sorce_folder + "/img/*.svg",
+		icons: sorce_folder + "/icons/*.svg",
 	},
 	clean: "./" + project_folder + "/"
 }
@@ -34,8 +34,7 @@ const {src,dest} = require('gulp'),
 	clean_css = require('gulp-clean-css'),
 	rename = require('gulp-rename'),
 	uglify = require('gulp-uglify-es').default,
-	webp = require('gulp-webp'),
-	webphtml = require('gulp-webp-html');
+	webp = require('gulp-webp');
 
 function browserSync(params) {
 	browsersync.init({
@@ -49,7 +48,7 @@ function browserSync(params) {
 
 function html() {
 	return src(path.src.html)
-		.pipe(webphtml())
+		.pipe(webp())
 		.pipe(fileinclude())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream())
@@ -104,11 +103,6 @@ function icons() {
 
 function images() {
 	return src(path.src.img)
-		.pipe(
-			webp({
-				quality: 90
-			})
-		)
 		.pipe(dest(path.build.img))
 		.pipe(browsersync.stream())
 }
