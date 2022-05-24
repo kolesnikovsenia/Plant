@@ -12,25 +12,102 @@
 	box-sizing: border-box
 	list-style-type: none
 	text-decoration: none
+body
+	position: relative
+	z-index: -1
+.body_wrapper
+	display: none
+	transition: 0.5s ease-in-out
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	bottom: 0
+	width: 100%
+	z-index: 1
+.active
+	display: block
+	left: 0
+	background: rgba(7, 34, 47, 0.7)
 .mobile_menu
 	display: none
+	z-index: 1
+	background: $text_color_white
 	position: fixed
 	left: -100%
+	right: 0
+	top: 0
+	height: 100%
 	width: 50%
 	transition: 0.6s all
-	.active
-		left: 0
+	padding: 20px 30px 0px 50px
+	&_item
+		flex-direction: column
+		align-items: flex-start
+		gap: 25px
+		&_row
+			display: flex
+			align-items: center
+			justify-content: space-between
+			&_logo
+				@include font_logo
+				color: $text_color_black
+				&:hover
+					color: $basic_color
+			.burger
+				&_close
+					border: none
+					background: none
+		&_link
+			padding-top: 30px
+			display: flex
+			align-items: flex-start
+			flex-direction: column
+			gap: 20px
+			.link
+				@include font_link
+				color: $text_color_black
+				&:hover
+					background: #DFFFE3
+					border-radius: 6px
+		&_login
+			padding-top: 35px
+			display: flex
+			justify-content: space-between
+			&_btnLogin
+				background: none
+				border: none
+				@include font_login_btn
+				color: $text_color_black
+				&:hover
+					color: $basic_color
+			&_btnSingUp
+				@include small_btn
+				&:hover
+					background: #DFFFE3
+					color: $text_color_black
+.active
+	display: block
+	left: 0
 
 .container
 	max-width: 1152px
 	margin: 0 auto
 
 // General
+.menu
+	border-radius: 3px
+	padding-top: 47px
+	position: sticky
+	transition: 0.5s ease-in-out
+	top: 0
+	right: 0
+	left: 0
+	box-shadow: 0px 50px 100px -67px rgba(255,255,255,1)
 .menu_item
 	display: flex
 	align-items: center
 	justify-content: space-between
-	padding-top: 47px
 	&_logo
 		@include font_logo
 		color: $text_color_black
@@ -61,15 +138,27 @@
 			&:hover
 				background: #DFFFE3
 				color: $text_color_black
-		.burger
+	.burger
+		display: none
+		width: 100%
+		border: none
+		background: none
+		cursor: pointer
+		span
 			display: block
-			width: 50%
-			background: $basic_color
-			span
-				width: 50px
-				height: 5px
-				border-radius: 2px
-				background: $text_color_grey
+			height: 3px
+			margin-bottom: 5px
+			border: none
+			border-radius: 2px
+			background: $text_color_grey
+			&:nth-child(1)
+				width: 30px
+			&:nth-child(2)
+				width: 30px
+			&:nth-child(3)
+				margin-bottom: 0px
+				width: 10px
+// General
 .welcome_section
 	padding-top: 102px
 	&_row

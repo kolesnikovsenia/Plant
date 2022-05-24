@@ -6,18 +6,21 @@ const path={
 		html: project_folder + "/",
 		css: project_folder + "/css/",
 		img: project_folder + "/img/",
+		js: project_folder + "/js/",
 		icons: project_folder + "/icons/",
 	},
 	src:{
 		html: [sorce_folder + "/*.html", "!"+sorce_folder + "/_*.html"],
 		css: sorce_folder + "/sass/*.sass", 
 		img: sorce_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+		js: sorce_folder + "/js/main.js",
 		icons: sorce_folder + "/icons/*.svg",
 	},
 	watch:{
 		html: sorce_folder + "/**/*.html",
 		css: sorce_folder + "/sass/**/*.sass",
 		img: sorce_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+		js: sorce_folder + "/js/main.js",
 		icons: sorce_folder + "/icons/*.svg",
 	},
 	clean: "./" + project_folder + "/"
@@ -83,19 +86,19 @@ function html() {
 
 
 
-// function js() {
-// 	return src(path.src.js)
-// 		.pipe(fileinclude())
-// 		.pipe(dest(path.build.js))
-// 		.pipe(uglify())
-// 		.pipe(
-// 			rename({
-// 				extname: ".min.js"
-// 			})
-// 		)
-// 		.pipe(dest(path.build.js))
-// 		.pipe(browsersync.stream())
-// }
+function js() {
+	return src(path.src.js)
+		.pipe(fileinclude())
+		.pipe(dest(path.build.js))
+		.pipe(uglify())
+		.pipe(
+			rename({
+				extname: ".min.js"
+			})
+		)
+		.pipe(dest(path.build.js))
+		.pipe(browsersync.stream())
+}
 
 function icons() {
 	return src(path.src.icons)
@@ -112,7 +115,7 @@ function images() {
 function watchFiles(params) {
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
-	// gulp.watch([path.watch.js], js);
+	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.img], images);
 	gulp.watch([path.watch.icons], icons);
 }
@@ -121,12 +124,12 @@ function clean(params) {
 	return del(path.clean);
 }
 
-const build = gulp.series(clean, gulp.parallel(css, html, images, icons)); 
+const build = gulp.series(clean, gulp.parallel(css, js, html, images, icons)); 
 const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.images = images;
 exports.icons = icons;
-// exports.js = js;
+exports.js = js;
 exports.css = css;
 exports.html = html;
 exports.build = build;

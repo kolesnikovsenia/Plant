@@ -1,4 +1,4 @@
-@import "mixin"
+@import "_mixin"
 
 @media (max-width: 1024px)
 	.container
@@ -8,6 +8,8 @@
 	.leaf
 		display: none
 	.welcome_section
+		&_title
+			@include font_h1_tablet
 		&_row
 			flex-direction: column-reverse
 			align-items: center
@@ -107,16 +109,28 @@
 		padding-top: 80px
 		.footer_row
 			justify-content: space-around
-@mixin font_h1
-	font-size: 55px
-	line-height: 92px
+
+
 @media (max-width: 768px)
 	.container
 		max-width: 600px
+	.menu_item
+		padding-top: 20px
+		&_login
+			display: flex
+			.burger
+				display: block
 	.menu_item_link
 		display: none
+	.menu_item_login_btn
+		&Login
+			display: none
+		&SingUp
+			display: none
 	.welcome_section
 		padding-top: 60px
+		&_title
+			text-align: center
 	.section_collection_row_title
 		text-align: center
 	.section_collection_row_img
@@ -160,29 +174,105 @@
 			justify-content: space-between
 			.footer_column_start
 				gap: 15px
-				width: 40%
+				width: 30%
 			.footer_column_end
-				gap: 30px
+				gap: 25px
 				.column_nav
 					gap: 15px
+					width: 30%
 					.list
 						gap: 8px
-@mixin font_h1
-	text-align: center
-	font-size: 35px
-	line-height: 92px
-@mixin font_logo
-	font-weight: 700
-	font-size: 16px
-	line-height: 33px
-		transition: 0.4s ease-in
-@mixin font_text_section
-	font-size: 12px
-	font-weight: 400
-	line-height: 160%
-	color: $text_color_grey
 @media (max-width: 425px)
 	.container
+		max-width: 380px
+	.mobile_menu
+		width: 100%
+	.welcome_section
+		padding-top: 20px
+		&_info
+			gap: 10px
+		&_title
+			@include font_h1__phone
+		&_img
+			.float
+				display: none
+			img
+				width: 100%
+		&_text
+			@include font_text_section__phone
+		&_table
+			gap: 30px
+			flex-direction: column
+	.section_collection_row_img
+		flex-direction: column
+		&_box
+			width: 100%
+			border-radius: 30px
+	.about_section_img
+		border-radius: 50px
+		box-shadow: none
+		width: 100%
+		&_selector
+			margin: 0
+	.product_section_text_title
+		@include title_section__phone
+		text-align: center
+	.product_section_img_box
+		width: 100%
+		align-items: center
+		border-radius: 30px
+		&_text
+			align-items: center
+	.news_section
+		max-width: 380px
+		margin: 0 auto
+	.news_section_row
+		width: 100%
+		padding: 40px
+		.img
+			display: none
+	.news_section_column
+		width: 100%
+		.title
+			@include title_section__phone
+		.text
+			@include font_text_section__phone
+	.instagram_section
+		&_title
+			@include instagram_title__phone
+		.text
+			.instagram_section_title
+				text-align: center
+	footer
+		.footer_row
+			flex-direction: column
+			.footer_column_start
+				width: 100%
+				.title
+					text-align: center
+				.text
+					text-align: center
+				.social_icons
+					justify-content: center
+			.footer_column_end
+				padding-top: 20px
+				width: 100%
+				align-items: center
+				gap: 20px
+				justify-content: center
+				.column_nav
+					width: 30%
+					gap: 10px
+					align-items: center
+					.title
+						@include font_logo__phone
+					.list
+						text-align: center
+						a
+							@include font_text_section__phone
+@media (max-width: 375px)
+	.container
+		max-width: 320px
+@media (max-width: 320px)
+	.container
 		max-width: 300px
-	.menu_item_login
-		display: none
