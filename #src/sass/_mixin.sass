@@ -1,6 +1,6 @@
 @import "_variable"
 
-
+// laptop
 @mixin position_center
 	display: flex
 	justify-content: center
@@ -85,7 +85,6 @@
 	line-height: 23px
 	color: $basic_color
 @mixin title_section
-	font-family: $font_family_Nunito
 	font-weight: 700
 	font-size: 40px
 	line-height: 50px
@@ -121,5 +120,37 @@
 @mixin instagram_title
 	font-weight: 700
 	font-size: 48px
+	line-height: 57px
+	color: $text_color_black
+// laptop
+
+// max-width: 1024px
+@mixin font_h1_tablet
+	font-size: 55px
+	line-height: 92px
+	font-weight: 700
+// max-width: 425px
+@mixin font_h1__phone
+	text-align: center
+	font-size: 25px
+	line-height: 40px
+@mixin font_logo__phone
+	font-weight: 700
+	font-size: 14px
+	line-height: 33px
+	transition: 0.4s ease-in
+@mixin font_text_section__phone
+	font-size: 12px
+	font-weight: 400
+	line-height: 160%
+	color: $text_color_grey
+@mixin title_section__phone
+	font-weight: 700
+	font-size: 20px
+	line-height: 50px
+	color: $text_color_black
+@mixin instagram_title__phone
+	font-weight: 700
+	font-size: 35px
 	line-height: 57px
 	color: $text_color_black

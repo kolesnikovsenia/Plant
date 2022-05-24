@@ -11,6 +11,7 @@
 	<title>Plant</title>
 </head>
 <body>
+	<div class="body_wrapper"></div>
 	<div class="container">
 		<nav class="menu">
 				<ul class="menu_item">
@@ -18,34 +19,37 @@
 					<div class="menu_item_link">
 						<li><a class="link" href="#">Home</a></li>
 						<li><a class="link" href="#">Services</a></li>
-						<li><a class="link" href="#">About Us</a></li>
-						<li><a class="link" href="#">Blog</a></li>
-						<li><a class="link" href="#">Contact</a></li>
+						<li><a class="link" href="#About">About Us</a></li>
+						<li><a class="link" href="#Blog">Blog</a></li>
+						<li><a class="link" href="#Contact">Contact</a></li>
 					</div>
 					<div class="menu_item_login">
 						<button href="#" class="menu_item_login_btnLogin">Login</button>
 						<button href="#" class="menu_item_login_btnSingUp">Sing Up</button>
+						<button href="#" class="burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
 					</div>
 				</ul>
 		</nav>
 		<nav class="mobile_menu">
-			<ul class="menu_item">
-				<p class="menu_item_logo">Plant</p>
-				<div class="menu_item_link">
+			<ul class="mobile_menu_item">
+				<div class="mobile_menu_item_row">
+					<p class="menu_item_logo">Plant</p>
+					<button href="#" class="burger_close"><img src="icons/burger_close.svg" alt="#"></button>
+				</div>
+				<div class="mobile_menu_item_link">
 					<li><a class="link" href="#">Home</a></li>
 					<li><a class="link" href="#">Services</a></li>
-					<li><a class="link" href="#">About Us</a></li>
-					<li><a class="link" href="#">Blog</a></li>
-					<li><a class="link" href="#">Contact</a></li>
+					<li><a class="link" href="#About">About Us</a></li>
+					<li><a class="link" href="#Blog">Blog</a></li>
+					<li><a class="link" href="#Contact">Contact</a></li>
 				</div>
-				<div class="menu_item_login">
-					<button href="#" class="menu_item_login_btnLogin">Login</button>
-					<button href="#" class="menu_item_login_btnSingUp">Sing Up</button>
-					<button href="#" class="burger">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
+				<div class="mobile_menu_item_login">
+					<button href="#" class="mobile_menu_item_login_btnLogin">Login</button>
+					<button href="#" class="mobile_menu_item_login_btnSingUp">Sing Up</button>
 				</div>
 			</ul>
 		</nav>
@@ -133,7 +137,7 @@
 
 <!--About Us Section-->
 
-	<section class="about_section">
+	<section id="About" class="about_section">
 		<div class="container">
 			<div class="about_section_row">
 				<div class="about_section_img_selector"><img class="about_section_img" src="img/tree.svg" alt="Tree"></div>
@@ -209,7 +213,7 @@
 	</section>
 
 <!--About Customers Section -->
-	<section class="about_customers">
+	<section id="Blog" class="about_customers">
 		<div class="container">
 			<div class="about_customers_section">
 				<div class="about_customers_text">
@@ -242,7 +246,7 @@
 
 <!-- News Section -->
 
-	<section class="news_section">
+	<section id="Contact" class="news_section">
 			<div class="news_section_row">
 				<div class="news_section_column">
 					<h2 class="title">Subscribe Our Newsletter</h2>
@@ -305,7 +309,7 @@
 					<nav class="column_nav">
 						<h3 class="title">Help</h3>
 						<ul class="list">
-							<li><a href="#">Coustomers Services</a></li>
+							<li><a href="#">Coustomers</a></li>
 							<li><a href="#">FAQs</a></li>
 							<li><a href="#">We Are Hiring</a></li>
 							<li><a href="#">Returns</a></li>
@@ -315,6 +319,6 @@
 			</div>
 		</div>
 	</footer>
-	<script src="/js/main.min.js"></script>
+	<script src="js/main.min.js"></script>
 </body>
 </html>
