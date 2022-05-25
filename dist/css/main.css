@@ -174,8 +174,9 @@ body {
 }
 
 .container {
-  max-width: 1152px;
+  max-width: 1112px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .menu {
@@ -1727,6 +1728,10 @@ footer .footer_row .footer_column_end .column_nav .list a:hover {
     max-width: 380px;
   }
 
+  .menu {
+    padding-top: 10px;
+  }
+
   .mobile_menu {
     width: 100%;
   }
@@ -1797,6 +1802,10 @@ footer .footer_row .footer_column_end .column_nav .list a:hover {
     line-height: 50px;
     color: #1A1A1A;
     text-align: center;
+  }
+
+  .about_customers_block {
+    width: 100%;
   }
 
   .product_section_img_box {
